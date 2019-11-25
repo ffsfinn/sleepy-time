@@ -11,6 +11,26 @@ passport.use(new GoogleStrategy({
         if(err) return cb(err);
         if(sleepUser) {
             return cb(null, sleepUser);
+        } else {
+            var newSleepUser = new Sleepuser({
+                name: profile.displayName,
+                email: profile.emails[0].value,
+                googleId: profile.id
+            });
+            newSleepUser.save(function(err){
+                if(err) return cb(err);
+                return cb(null, newSleepUser);
+            })
         }
     });
 }));
+
+passport.serializeUser(function(sleepUser, done){
+    done(null, student.id);
+});
+
+passport.deserializeUser(function(id, done){
+    Sleepuser.findById(id, function(err, sleepUser){
+        done(err, sleepUser);
+    });
+});
