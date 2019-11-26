@@ -1,11 +1,13 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
-  </body>
-</html>
+<%- include('./partials/header') %>
+
+
+<h1>Hello</h1>
+
+<% if (user) { %>
+  <a href="/logout"><i class="material-icons left">trending_flat</i>Log Out</a>
+<% } else { %>
+  <a href="/auth/google"><i class="material-icons left">vpn_key</i>Login with Google</a>
+<% } %>
+
+
+<%- include('./partials/footer') %>
