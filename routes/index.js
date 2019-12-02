@@ -1,4 +1,3 @@
-const express = require('express');
 const router = require('express').Router();
 const passport = require('passport');
 
@@ -22,7 +21,7 @@ router.get('/oauth2callback', passport.authenticate(
 
 router.get('/logout', function(req, res){
   req.logout();
-  res.redirect('/users');
+  res.redirect('/');
 });
 
 module.exports = router;
