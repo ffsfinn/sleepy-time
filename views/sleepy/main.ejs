@@ -1,0 +1,27 @@
+<%- include('../partials/header') %>
+
+
+<a href="/sleepy/new">New Sleepy Time</a>
+
+<table>
+
+    <thead>
+        <th>Time</th>
+        <th>Date Submitted</th>
+    </thead>
+
+    <tbody>
+        <% time.forEach(function(s) { %>
+            <tr>
+                <td><%= s.hours %></td>
+                <td><%= s.day %></td>
+                <td><%= s.submit %></td>
+            </tr>
+        <% }); %>
+    </tbody>
+
+</table>
+
+
+
+<%- include('../partials/footer') %>

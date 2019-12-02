@@ -1,0 +1,63 @@
+<%- include('../partials/header') %>
+
+
+<form action="/sleepy" method="POST">
+
+    <h3>From :: </h3>
+
+    <select name="hours">
+
+        <option value="1:00">1:00</option>
+        <option value="2:00">2:00</option>
+        <option value="3:00">3:00</option>
+        <option value="4:00">4:00</option>
+        <option value="5:00">5:00</option>
+        <option value="6:00">6:00</option>
+        <option value="7:00">7:00</option>
+        <option value="8:00">8:00</option>
+        <option value="9:00">9:00</option>
+        <option value="10:00">10:00</option>
+        <option value="11:00">11:00</option>
+        <option value="12:00">12:00</option>
+
+    </select>
+
+    <select name="day">
+
+        <option value="AM">AM</option>
+        <option value="PM">PM</option>
+        
+    </select>
+
+    <h3>To ::</h3>
+
+    <select name="hours">
+
+            <option value="1:00">1:00</option>
+            <option value="2:00">2:00</option>
+            <option value="3:00">3:00</option>
+            <option value="4:00">4:00</option>
+            <option value="5:00">5:00</option>
+            <option value="6:00">6:00</option>
+            <option value="7:00">7:00</option>
+            <option value="8:00">8:00</option>
+            <option value="9:00">9:00</option>
+            <option value="10:00">10:00</option>
+            <option value="11:00">11:00</option>
+            <option value="12:00">12:00</option>
+    
+        </select>
+    
+        <select name="day">
+    
+            <option value="AM">AM</option>
+            <option value="PM">PM</option>
+            
+        </select>
+
+    <button type="submit">Submit Time</button>
+
+</form>
+
+
+<%- include('../partials/footer') %>
