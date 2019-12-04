@@ -1,11 +1,11 @@
 <%- include('../partials/header') %>
 
 
-<form action="/sleepy" method="POST">
+<form id="form1" action="/sleepy" method="POST">
 
     <h3>From :: </h3>
 
-    <select name="hours">
+    <select name="hoursStart">
 
         <option value="1:00">1:00</option>
         <option value="2:00">2:00</option>
@@ -31,7 +31,7 @@
 
     <h3>To ::</h3>
 
-    <select name="hours">
+    <select name="hoursEnd">
 
             <option value="1:00">1:00</option>
             <option value="2:00">2:00</option>
@@ -48,14 +48,14 @@
     
         </select>
     
-        <select name="day">
+        <select name="night">
     
             <option value="AM">AM</option>
             <option value="PM">PM</option>
             
         </select>
 
-    <button type="submit">Submit Time</button>
+    <button form="form1" type="submit">Submit Time</button>
 
 </form>
 

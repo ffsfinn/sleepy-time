@@ -3,7 +3,6 @@ body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   display: grid;
   justify-content: center;
-  background-color: black;
 }
 
 #main-one {

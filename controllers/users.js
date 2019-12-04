@@ -1,4 +1,4 @@
-const sleepUser = require('../models/user');
+const Sleepuser = require('../models/user');
 
 module.exports = {
   index

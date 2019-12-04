@@ -6,19 +6,18 @@
 <table>
 
     <thead>
-        <th>Time</th>
+        <th>Time Start</th>
+        <th>Time End</th>
         <th>Date Submitted</th>
     </thead>
 
     <tbody>
-        <% time.forEach(function(s) { %>
-            <tr>
-                <td><%= s.hours %></td>
-                <td><%= s.day %></td>
-                <td><%= s.submit %></td>
-            </tr>
-        <% }); %>
-    </tbody>
+            <% sleepy.forEach(function(s) { %>
+                <tr>
+                    <td><%= s.hoursStart %><%= s.night && s.day %></td>
+                    <td><%= s.hoursEnd %> <%= s.day && s.night %></td>
+                </tr>
+            <% }); %>
 
 </table>
 

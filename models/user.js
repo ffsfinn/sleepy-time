@@ -1,13 +1,19 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const sleepUser = new Schema({
+const userSchema = new Schema({
     name: String,
     email: String,
     avatar: String,
-    googleId: String
+    googleId: String,
+    sleepTimes: [
+        {
+            type: Schema.Types.ObjectId,
+            ref: 'sleep'
+        }
+    ]
 }, 
 { timestamps: true }
 );
 
-module.exports = mongoose.model('Sleepuser', sleepUser);
+module.exports = mongoose.model('Sleepuser', userSchema);
