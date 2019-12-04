@@ -1,7 +1,7 @@
 <%- include('../partials/header') %>
 
 
-<form id="form1" action="/sleepy" method="POST">
+<form id="form1" action="/sleepy/<%= user._id %>" method="POST">
 
     <h3>From :: </h3>
 
@@ -56,7 +56,7 @@
         </select>
 
     <button form="form1" type="submit">Submit Time</button>
-
+       
 </form>
 
 

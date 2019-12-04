@@ -7,36 +7,33 @@ module.exports = {
     show
 };
 
-function index(req, res) {
-    Sleepuser.findById(req.user._id, function(err, user){
-        Sleeptime.findOne(user.sleepTimes[0], function(err, sleepy){
-            console.log('USER : ',user)
-            console.log("SLEEPY : ", user.sleepTimes)
-            res.render('sleepy/main', {
-                user,
-                sleepy : user.sleepTimes
-            });
-        });
-    });
+async function index(req, res) {
+            // console.log('USER : ',user)
+            // console.log("SLEEPY : ", user.sleepTimes)
+            Sleepuser.findById(req.user._id)
+                .populate('sleepTimes')
+                .exec((error, user) => {
+                    if (error) throw new Error(error)
+                    res.render('sleepy/main', {
+                        user: user
+                    })
+            })
 }
 
 async function create(req, res) {
-    try{
+    try {
+        console.log(req.params.userId)
         let sleep = new Sleeptime(req.body); // seperate sleeptime
         const newSleepTime = await sleep.save()
-        const user = await Sleepuser.findOne(req.params.id)
+        const user = await Sleepuser.findById(req.params.userId)
         const populated = await user.sleepTimes.push(newSleepTime)
+        // console.log(" controllers/sleepy.js at line 30 : ", populated)
         await user.save()
-        const party =  await Sleepuser.findById(req.params.id)
-            .populate('sleep')
-            .exec((error, user) => {
-                if (error) throw new Error(error)
-                console.log(user)
-                res.redirect('/sleepy')
-            })
-            console.log(party)
-    } catch (error ) {
-        throw new Error(error)
+        res.redirect('/sleepy')
+    } catch (error) {
+        // throw new Error(error)
+        res.send("FAILURE")
+
     }
 }
 
@@ -48,3 +45,4 @@ function show(req, res) {
         });
     });
 }
+

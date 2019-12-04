@@ -12,7 +12,8 @@
     </thead>
 
     <tbody>
-            <% sleepy.forEach(function(s) { %>
+
+            <% user.sleepTimes.forEach(function(s) { %>
                 <tr>
                     <td><%= s.hoursStart %><%= s.night && s.day %></td>
                     <td><%= s.hoursEnd %> <%= s.day && s.night %></td>

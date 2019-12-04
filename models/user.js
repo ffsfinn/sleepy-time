@@ -9,7 +9,7 @@ const userSchema = new Schema({
     sleepTimes: [
         {
             type: Schema.Types.ObjectId,
-            ref: 'sleep'
+            ref: 'Sleeptime'
         }
     ]
 }, 
