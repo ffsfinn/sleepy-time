@@ -5,10 +5,47 @@ body {
   justify-content: center;
 }
 
+#title1 {
+  font-family: 'Kaushan Script', cursive;
+  font-size: 50px;
+  color: white;
+}
+
+#image1 {
+  background-image: url(https://png.pngtree.com/thumb_back/fw800/back_our/20190621/ourmid/pngtree-beautiful-starry-world-sleep-day-synthetic-background-image_198060.jpg);
+  background-repeat: no-repeat;
+  width: 960px;
+  height: 1440px;
+}
+
 #main-one {
   text-align: center;
+  font-family: 'Indie Flower', cursive;
+}
+
+#links1 {
+  font-family: 'Indie Flower', cursive;
+  font-size: 25px;
+  color: white;
+}
+
+#links1:hover {
+  color: black;
 }
 
 a {
   color: #00B7FF;
+}
+
+.delete-form {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.delete-form button {
+  color: black;
+}
+
+li {
+  list-style: none;
 }

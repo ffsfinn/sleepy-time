@@ -4,34 +4,31 @@ const Sleepuser = require('../models/user');
 module.exports = {
     index,
     create,
-    show
+    show,
+    delete: deleteTime
 };
 
-async function index(req, res) {
-            // console.log('USER : ',user)
-            // console.log("SLEEPY : ", user.sleepTimes)
-            Sleepuser.findById(req.user._id)
-                .populate('sleepTimes')
-                .exec((error, user) => {
-                    if (error) throw new Error(error)
-                    res.render('sleepy/main', {
-                        user: user
-                    })
-            })
+function index(req, res) {
+    Sleepuser.findById(req.user._id)
+        .populate('sleepTimes')
+        .exec((error, user) => {
+            if (error) throw new Error(error)
+            res.render('sleepy/main', {
+                user: user
+        });
+    });
 }
 
 async function create(req, res) {
     try {
         console.log(req.params.userId)
-        let sleep = new Sleeptime(req.body); // seperate sleeptime
+        let sleep = new Sleeptime(req.body);
         const newSleepTime = await sleep.save()
         const user = await Sleepuser.findById(req.params.userId)
         const populated = await user.sleepTimes.push(newSleepTime)
-        // console.log(" controllers/sleepy.js at line 30 : ", populated)
         await user.save()
         res.redirect('/sleepy')
     } catch (error) {
-        // throw new Error(error)
         res.send("FAILURE")
 
     }
@@ -45,4 +42,9 @@ function show(req, res) {
         });
     });
 }
+
+function deleteTime(req, res) {
+    Sleeptime.deleteOne(req.params.id);
+    res.redirect('/sleepy');
+  }
 

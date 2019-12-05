@@ -8,7 +8,7 @@
     <thead>
         <th>Time Start</th>
         <th>Time End</th>
-        <th>Date Submitted</th>
+        <th>Notes</th>
     </thead>
 
     <tbody>
@@ -17,6 +17,16 @@
                 <tr>
                     <td><%= s.hoursStart %><%= s.night && s.day %></td>
                     <td><%= s.hoursEnd %> <%= s.day && s.night %></td>
+                    <td><a href="/sleepy/notes">New Sleepy Note</a></td>
+
+                    <td>
+                        
+                        <form action="/sleepy/<%= user %>?_method=DELETE" class="delete-form" method="POST">
+                            <button type="submit">:c</button>
+                        </form>
+
+                    </td>
+
                 </tr>
             <% }); %>
 

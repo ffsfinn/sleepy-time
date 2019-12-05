@@ -6,36 +6,40 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Indie+Flower|Kaushan+Script&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/stylesheets/style.css">
   <title>Sleepy Time</title>
 </head>
-<body>
 
-<nav class="navbar navbar-dark bg-dark">
-    <a class="navbar-brand" href="/">Sleepy Time</a>
+
+<body>
+  <div id="image1" class="border border-primary rounded-lg">
+
+<nav class="navbar navbar-light" style="background-color: #59C9E8">
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
+      <span><a id="title1" class="navbar-brand">Sleepy Time</a></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
       <div class="navbar-nav">
         <a class="nav-item nav-link" href="">
           
           <% if (user) { %>
-            <a class="nav-item nav-link" href="/logout">Logout</a>
-            <a class="nav-item nav-link" href="/sleepy">My Times</a>
-            <a class="nav-item nav-link" href="#">Sleepy Notes</a>
-            <a class="nav-item nav-link" href="#">Sleepy Diet</a>
-          <% } else { %>
-            <a class="nav-item nav-link" href="/auth/google">Login with Google!</a>
-            <a class="nav-item nav-link disabled" href="#" tabindex="-1" aria-disabled="true">My Times</a>
-            <a class="nav-item nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Sleepy Notes</a>
-            <a class="nav-item nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Sleepy Diet</a>
+            <a id="links1" class="nav-item nav-link" href="/">Sleepy :: Home</a>
+            <a id="links1" class="nav-item nav-link" href="/sleepy">Sleepy :: Times</a>
+            <a id="links1" class="nav-item nav-link" href="/sleepy/notes">Sleepy :: Notes</a>
+            <a id="links1" class="nav-item nav-link" href="/logout">Logout</a>
+            <% } else { %>
+            <a id="links1" class="nav-item nav-link" href="/auth/google">Login with Google!</a>
+            <a id="links1" class="nav-item nav-link disabled" href="#" tabindex="-1" aria-disabled="true">My Times</a>
+            <a id="links1" class="nav-item nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Sleepy Notes</a>
+            <a id="links1" class="nav-item nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Sleepy Diet</a>
           <% } %></a>
 
+          </div>
         <!-- <a class="nav-item nav-link disabled" href="#" tabindex="-1" aria-disabled="true"></a> **Example of a disabled button** -->
-  
+
       </div>
     </div>
   </nav>
 
-<img id="image" src="https://png.pngtree.com/thumb_back/fw800/back_our/20190621/ourmid/pngtree-creative-cartoon-world-sleep-day-composite-background-image_198064.jpg">
+
