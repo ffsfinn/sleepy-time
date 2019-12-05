@@ -29,7 +29,7 @@ async function create(req, res) {
         await user.save()
         res.redirect('/sleepy')
     } catch (error) {
-        res.send("FAILURE")
+        res.send('FAIL')
 
     }
 }
@@ -43,8 +43,21 @@ function show(req, res) {
     });
 }
 
-function deleteTime(req, res) {
-    Sleeptime.deleteOne(req.params.id);
+async function deleteTime(req, res) {
+    try {
+        const time = await Sleepuser.findById(req.user._id)
+        console.log('THIS IS THE TIME ID IN USER ID ::', time)
+        const timeDel = await time.sleepTimes.remove(req.params.id)
+        console.log('DID IT DELETE? :: ',timeDel)
+        timeDel.splice([0])
+    } catch(error) {
+        res.send('FAIL')
+    }
+
+    console.log('USER ID:', req.user._id)
+    console.log('ID ???', req.body)
+    console.log('ID ???', req.params.body)
+
     res.redirect('/sleepy');
-  }
+}
 
