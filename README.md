@@ -1,6 +1,9 @@
 ***TITLE::***
 **Sleepy Time**
 
+**Image**
+![Image One of Website](https://imgur.com/F36u5Bg)
+
 ***PURPOSE::***
 **Designed to keep track of your hours and correlate it to facts about sleeping cycles**
 
@@ -18,9 +21,9 @@ https://wireframepro.mockflow.com/editor.jsp?editor=on&bgcolor=white&perm=Create
 https://trello.com/b/w4Rcz13w/sleepy-time
 
 ***HOW TO USE::***
-You Sign in Using Your Google Account
-Then Input Your Sleep Times
-Thats It!
+1. You Sign in Using Your Google Account
+2. Then Input Your Sleep Times
+3. Thats It!
 
 ***GETTING STARTED::***
 https://sleepy-time-project.herokuapp.com/
