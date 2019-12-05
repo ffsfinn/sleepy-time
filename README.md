@@ -2,7 +2,7 @@
 **Sleepy Time**
 
 **Image**
-![Image One of Website](https://imgur.com/F36u5Bg)
+![Image One of Website](https://i.imgur.com/F36u5Bg.png)
 
 ***PURPOSE::***
 **Designed to keep track of your hours and correlate it to facts about sleeping cycles**
