@@ -10,10 +10,6 @@ const sleepNote = new Schema({
         type: String,
         required: true
     },
-    sleepNotes: {
-        type: Schema.Types.ObjectId,
-        ref: 'Sleepnote'
-    },
     submitted: Date
 }, {
     timestamps: true

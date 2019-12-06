@@ -46,18 +46,14 @@ function show(req, res) {
 async function deleteTime(req, res) {
     try {
         const time = await Sleepuser.findById(req.user._id)
-        console.log('THIS IS THE TIME ID IN USER ID ::', time)
-        const timeDel = await time.sleepTimes.remove(req.params.id)
-        console.log('DID IT DELETE? :: ',timeDel)
-        timeDel.splice([0])
+        const deleted = await time.sleepTimes.pull(req.params.id)
+        const result = await time.save()
+        res.status(200) // status OK and good
+        res.redirect('/sleepy');
     } catch(error) {
-        res.send('FAIL')
+        console.error(error)
+        res.status(500) // Returns an Error
+        res.send('server error')
     }
-
-    console.log('USER ID:', req.user._id)
-    console.log('ID ???', req.body)
-    console.log('ID ???', req.params.body)
-
-    res.redirect('/sleepy');
 }
 

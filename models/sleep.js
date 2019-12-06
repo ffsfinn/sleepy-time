@@ -18,8 +18,12 @@ const sleepTime = new Schema({
         type: String,
         enum: ['AM', 'PM']
     },
+    sleepNotes: {
+        type: Schema.Types.ObjectId,
+        ref: 'Sleepnote'
+    },
     submit: {
-        type: String
+        type: Date
     }
 });
 
