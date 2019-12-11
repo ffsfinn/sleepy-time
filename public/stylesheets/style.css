@@ -21,6 +21,14 @@ body {
 #main-one {
   text-align: center;
   font-family: 'Indie Flower', cursive;
+  display: grid;
+  justify-content: center;
+  padding: 50px;
+  margin-top: 100px;
+  margin-left: 50px;
+  margin-right: 50px;
+  background-color: rgba(44, 195, 255, 0.671);
+  color: white;
 }
 
 #links1 {
